@@ -11,7 +11,7 @@ import java.util.List;
 public class Channel {
 
     @JsonProperty("id")
-    private String id;
+    private ChannelId id;
     @JsonProperty("snippet")
     private ChannelSnippet snippet;
 
@@ -32,12 +32,12 @@ public class Channel {
     }
 
     @JsonProperty("id")
-    public String getId() {
+    public ChannelId getId() {
         return id;
     }
 
     @JsonProperty("id")
-    public void setId(String id) {
+    public void setId(ChannelId id) {
         this.id = id;
     }
 
