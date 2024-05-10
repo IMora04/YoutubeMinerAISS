@@ -13,9 +13,14 @@ public class ChannelServiceTest {
 
     @Test
     void getVideosChannel(){
-        for(Channel c:service.getChannels().getItems()) {
+        for(Channel c:service.getChannels()) {
             System.out.println(c.getId() + ", " + c.getSnippet());
         }
+    }
+
+    @Test
+    void getVideosOneChannel(){
+        System.out.println(service.getChannel("UCK8sQmJBp8GCxrOtXWBpyEA"));
     }
 
 }
