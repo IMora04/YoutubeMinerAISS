@@ -20,7 +20,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-@Tag(name = "Chanenl", description = "Channel management API")
+@Tag(name = "Channel", description = "Channel management API")
 @RestController
 @RequestMapping("/youtubeminer/channels")
 public class ChannelController {
