@@ -20,7 +20,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-@Tag(name = "Channel", description = "Channel management API")
+@Tag(name = "YoutubeMiner", description = "API methods and models documentation")
 @RestController
 @RequestMapping("/youtubeminer/channels")
 public class ChannelController {
@@ -79,7 +79,7 @@ public class ChannelController {
 
     @Operation(summary = "Upload a list of channels to videominer",
             description = "Upload a list of channels",
-            tags = { "channels", "get" })
+            tags = { "channels", "upload" })
     @ApiResponses({
         @ApiResponse(responseCode = "200", description = "Upload a list of channels",
                     content = { @Content(schema = @Schema(implementation = Channel.class),
@@ -99,9 +99,9 @@ public class ChannelController {
 
     @Operation(summary = "upload a channel to videominer",
             description = "Upload a new channel",
-            tags = { "channels", "get" })
+            tags = { "channels", "upload" })
     @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Upload an specified chaneel",
+            @ApiResponse(responseCode = "200", description = "Upload an specified channel",
                     content = { @Content(schema = @Schema(implementation = Channel.class),
                             mediaType = "application/json") }),
             @ApiResponse(responseCode = "404", description="Channel not found",
