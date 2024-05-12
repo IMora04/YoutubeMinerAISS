@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 public class VideoSnippetServiceTests {
 
     @Autowired
-    @Qualifier("VideoSnippetService")
     VideoSnippetService service;
 
     @Test
