@@ -78,7 +78,7 @@ public class ChannelController {
     }
 
     @Operation(summary = "Upload a list of channels to videominer",
-            description = "Upload a list of channels",
+            description = "Upload a list of channels, parses it to a VMChannel format, and uploads it to VideoMiner.",
             tags = { "channels", "upload" })
     @ApiResponses({
         @ApiResponse(responseCode = "200", description = "Upload a list of channels",
@@ -98,7 +98,7 @@ public class ChannelController {
     }
 
     @Operation(summary = "upload a channel to videominer",
-            description = "Upload a new channel",
+            description = "Upload a new channel, , parse it to a VMChannel format, and upload it to VideoMiner.",
             tags = { "channels", "upload" })
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Upload an specified channel",
