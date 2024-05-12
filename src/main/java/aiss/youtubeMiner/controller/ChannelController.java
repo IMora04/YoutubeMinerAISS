@@ -50,9 +50,12 @@ public class ChannelController {
     @Operation( summary = "Retrieve all channels",
             description = "Get every channel",
             tags = { "channels", "get" })
-    @ApiResponse(responseCode = "200", description = "Channel list",
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Channel list",
                     content = { @Content(schema = @Schema(implementation = Channel.class),
-                    mediaType = "application/json") })
+                    mediaType = "application/json") }),
+            @ApiResponse(responseCode = "404", description="No channels retrieved",
+                    content = { @Content(schema = @Schema()) })})
     @GetMapping
     public List<Channel> findAll() {
         return service.getChannels();
@@ -77,9 +80,12 @@ public class ChannelController {
     @Operation(summary = "Upload a list of channels to videominer",
             description = "Upload a list of channels",
             tags = { "channels", "get" })
-    @ApiResponse(responseCode = "200", description = "Upload a list of channels",
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Upload a list of channels",
                     content = { @Content(schema = @Schema(implementation = Channel.class),
-                            mediaType = "application/json") })
+                            mediaType = "application/json") }),
+        @ApiResponse(responseCode = "404", description="Cannot upload",
+            content = { @Content(schema = @Schema()) })})
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
