@@ -13,7 +13,7 @@ public class CaptionServiceTest {
 
     @Test
     void getCaptions() {
-        for(Caption c: captionService.getCaptions("dQnL0re_f9I")) {
+        for(Caption c: captionService.findAll("dQnL0re_f9I")) {
             System.out.println(c.getId() + ": " + c.getSnippet().getName() + ", " + c.getSnippet().getLanguage());
         }
     }
