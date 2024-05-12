@@ -74,15 +74,12 @@ public class ChannelController {
         return service.getChannel(id);
     }
 
-    @Operation(summary = "Create a new channel",
-            description = "",
+    @Operation(summary = "Upload a list of channels to videominer",
+            description = "Upload a list of channels",
             tags = { "channels", "get" })
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Get one specified channel",
+    @ApiResponse(responseCode = "200", description = "Upload a list of channels",
                     content = { @Content(schema = @Schema(implementation = Channel.class),
-                            mediaType = "application/json") }),
-            @ApiResponse(responseCode = "404", description="Channel not found",
-                    content = { @Content(schema = @Schema()) })})
+                            mediaType = "application/json") })
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
@@ -94,6 +91,15 @@ public class ChannelController {
         }
     }
 
+    @Operation(summary = "upload a channel to videominer",
+            description = "Upload a new channel",
+            tags = { "channels", "get" })
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Upload an specified chaneel",
+                    content = { @Content(schema = @Schema(implementation = Channel.class),
+                            mediaType = "application/json") }),
+            @ApiResponse(responseCode = "404", description="Channel not found",
+                    content = { @Content(schema = @Schema()) })})
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{id}")
     public VMChannel uploadChannel(@PathVariable String id) {
