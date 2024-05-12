@@ -11,23 +11,11 @@ public class ModelParser {
 
     public static VMChannel channelParser(Channel channel) {
         VMChannel newChannel = new VMChannel();
-
-
-
         newChannel.setId(channel.getId().getId());
-
-
-
         newChannel.setDescription(channel.getSnippet().getDescription());
         newChannel.setName(channel.getSnippet().getTitle());
         newChannel.setCreatedTime(channel.getSnippet().getPublishedAt());
-
-
-
         newChannel.setVideos(channel.getVideos().stream().map(ModelParser::videoParser).toList());
-
-
-
         return newChannel;
     }
 

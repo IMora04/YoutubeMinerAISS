@@ -3,6 +3,7 @@ package aiss.youtubeMiner.service;
 import aiss.youtubeMiner.model.videoSnippet.VideoSnippet;
 import aiss.youtubeMiner.model.videoSnippet.VideoSnippetSearch;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -16,13 +17,16 @@ public class VideoSnippetService {
     @Autowired
     RestTemplate restTemplate;
 
+    @Value("youtubeminer.token")
+    private String token;
+
     public List<VideoSnippet> getVideosChannel(String channelId){
         return getVideosChannel(channelId, 10);
     }
 
     public List<VideoSnippet> getVideosChannel(String chanelId, Integer numVideos){
         String uri = "https://www.googleapis.com/youtube/v3/search?" +
-                "key=AIzaSyBJcbUFSXcmamEuytMYVsiVPvdbdQkG6i4" +
+                "key=" + token +
                 "&part=snippet" +
                 "&channelId=" + chanelId +
                 "&type=video" +
