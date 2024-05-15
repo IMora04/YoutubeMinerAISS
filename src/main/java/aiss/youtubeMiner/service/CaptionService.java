@@ -17,7 +17,7 @@ public class CaptionService {
     @Autowired
     RestTemplate restTemplate;
 
-    @Value("youtubeminer.token")
+    @Value("${youtubeminer.token}")
     private String token;
 
     public List<Caption> findAll(String videoId) {

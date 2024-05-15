@@ -17,7 +17,7 @@ public class CommentService {
     @Autowired
     RestTemplate restTemplate;
 
-    @Value("youtubeminer.token")
+    @Value("${youtubeminer.token}")
     private String token;
 
     public List<Comment> getComments(String videoId, Integer maxResults) {

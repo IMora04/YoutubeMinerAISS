@@ -17,7 +17,7 @@ public class VideoSnippetService {
     @Autowired
     RestTemplate restTemplate;
 
-    @Value("youtubeminer.token")
+    @Value("${youtubeminer.token}")
     private String token;
 
     public List<VideoSnippet> getVideosChannel(String channelId){

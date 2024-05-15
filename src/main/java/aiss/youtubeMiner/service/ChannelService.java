@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class ChannelService {
 
-    @Value("youtubeminer.token")
+    @Value("${youtubeminer.token}")
     private String token;
 
     @Autowired
@@ -33,7 +33,7 @@ public class ChannelService {
 
     public Channel getChannel(String id){
         String uri = "https://www.googleapis.com/youtube/v3/search?" +
-                //"key=AIzaSyAxabGmAkkFZ5ZvOUTr5pbzJxMrz5uNsKg" +
+                "key=" + token +
                 "&part=snippet" +
                 "&type=channel" +
                 "&channelId=" + id;
